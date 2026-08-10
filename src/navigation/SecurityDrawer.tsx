@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Linking, Image } from 'react-
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from './types';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const SecurityDrawer = (props: DrawerContentComponentProps) => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();

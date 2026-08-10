@@ -2,7 +2,7 @@ import { ActivityIndicator, Alert, Image, KeyboardAvoidingView, Platform, StyleS
 import React from 'react';
 import Icon from '../../components/Icon';
 import { api } from '../../lib/apiClient';
-import { useAuth } from '../../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import DeviceInfo from 'react-native-device-info';
 // import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 

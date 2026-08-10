@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 import { API_BASE_URL } from '@env';
-import { createSecuritySdk } from '@indwella/api-client';
+import { createSecuritySdk } from '@indwella/sdk';
 import { securityTokenStorage } from './tokenStorage';
 
 const FALLBACK_API_URL = Platform.OS === 'android' ? 'http://10.0.2.2' : 'http://localhost';
