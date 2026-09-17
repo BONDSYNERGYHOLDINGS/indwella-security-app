@@ -10,7 +10,7 @@ export const hardResetAndNavigateToLogin = async (navigation: any) => {
     navigation.dispatch(
   CommonActions.reset({
     index: 0,
-    routes: [{ name: 'resident_auth' }],
+    routes: [{ name: 'security_auth' }],
   })
 )
   } catch (error) {
