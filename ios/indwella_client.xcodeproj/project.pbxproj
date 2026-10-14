@@ -14,6 +14,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A1B2C3D4E5F60718293A4B5C /* PhoneContactPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5E /* PhoneContactPicker.swift */; };
 		A1B2C3D4E5F60718293A4B5D /* PhoneContactPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5F /* PhoneContactPicker.m */; };
+		9F0936E41D1E4E48953E375C /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FC9FCBCF0D4E64B6CFDB48 /* BootSplash.storyboard */; };
+		1EE40E2019454CAE94886C4B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202C9CFBC5034C38B22BB4AE /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A1B2C3D4E5F60718293A4B5E /* PhoneContactPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoneContactPicker.swift; path = indwella_client/PhoneContactPicker.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B5F /* PhoneContactPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PhoneContactPicker.m; path = indwella_client/PhoneContactPicker.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		44FC9FCBCF0D4E64B6CFDB48 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "indwella_client/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		202C9CFBC5034C38B22BB4AE /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "indwella_client/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				44FC9FCBCF0D4E64B6CFDB48 /* BootSplash.storyboard */,
+				202C9CFBC5034C38B22BB4AE /* Colors.xcassets */,
 			);
 			name = indwella_client;
 			sourceTree = "<group>";
@@ -168,6 +174,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				5E5EB79B9B338182232CA117 /* PrivacyInfo.xcprivacy in Resources */,
+				9F0936E41D1E4E48953E375C /* BootSplash.storyboard in Resources */,
+				1EE40E2019454CAE94886C4B /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

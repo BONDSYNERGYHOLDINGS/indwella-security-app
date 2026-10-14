@@ -59,10 +59,15 @@ See `AUTHENTICATION.md` for the full trace. `POST /security_login` with code
 
 ## Not implemented in this app
 
-- **Notifications inbox** — `Navbar`'s bell icon (not used by this app at
-  all, per `ARCHITECTURE.md`) has an explicit `"Notifications are not
-  available for security users yet"` alert coded in for the `security` role,
-  confirming this is a known, acknowledged gap rather than an oversight.
+- **Notifications inbox** — there is no bell icon or notification screen
+  anywhere in this app's UI. The app registers for and can display a raw
+  FCM push via `pushNotifications.ts` (see `ARCHITECTURE.md`), but there's
+  no in-app history to review afterward. (An earlier version of this app had
+  a shared `Navbar` component whose bell icon carried an explicit
+  "Notifications are not available for security users yet" alert for the
+  `security` role — that component has since been deleted from this app
+  entirely, so the gap is now simply "no notifications UI exists," not "a
+  disabled button exists.")
 - **Visitor search via backend** — see above.
 - **Any resident-, wallet-, or admin-facing feature** — entirely out of this
   app's scope by design; see `../USER-ROLES.md`.

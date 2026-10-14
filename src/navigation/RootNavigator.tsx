@@ -5,26 +5,33 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import AppStack from './AppStack';
 import SecurityStack from './SecurityStack';
 import { useAuth } from '../contexts/AuthContext';
+import AnimatedBootSplash from '../components/AnimatedBootSplash';
 
 const Drawer = createDrawerNavigator();
 
 const RootNavigator = () => {
   const { isAuthenticated, isAuthLoading } = useAuth();
+  const [splashDone, setSplashDone] = React.useState(false);
 
-  if (isAuthLoading) {
-    return null;
-  }
-
+  // The native splash stays up until auth state is resolved, then animates out
+  // over the navigator (instead of the blank screen this used to render).
   return (
-    <NavigationContainer>
-      {isAuthenticated ? (
-        <Drawer.Navigator screenOptions={{ headerShown: false }}>
-          <Drawer.Screen name="SecurityApp" component={SecurityStack} />
-        </Drawer.Navigator>
-      ) : (
-        <AppStack />
+    <>
+      {!isAuthLoading && (
+        <NavigationContainer>
+          {isAuthenticated ? (
+            <Drawer.Navigator screenOptions={{ headerShown: false }}>
+              <Drawer.Screen name="SecurityApp" component={SecurityStack} />
+            </Drawer.Navigator>
+          ) : (
+            <AppStack />
+          )}
+        </NavigationContainer>
       )}
-    </NavigationContainer>
+      {!splashDone && (
+        <AnimatedBootSplash ready={!isAuthLoading} onAnimationEnd={() => setSplashDone(true)} />
+      )}
+    </>
   );
 };
 

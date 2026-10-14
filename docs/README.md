@@ -27,10 +27,10 @@ declines visitor access codes at the gate.
 ## Quick start
 
 ```bash
-cd indwella-sdk && yarn install && yarn build
-cd ../indwella-security-app
-yarn install
-cp .env.example .env      # set API_BASE_URL
+yarn install               # also builds @indwella/sdk automatically (private
+                            # git dependency, self-builds via its own "prepare" script)
+cp .env.example .env      # leave API_BASE_URL commented out for simulator work — apiClient.ts
+                            # already falls back to the right host per platform; see the file's comments
 yarn start
 yarn android                # or: yarn ios
 ```
@@ -42,8 +42,9 @@ yarn android                # or: yarn ios
 This app does exactly one job: turn a visitor access code into an
 approve/decline decision, plus record a departure. It has no visibility into
 residents, wallets, estate administration, or billing — see `../USER-ROLES.md`
-for the full permission boundary. It also has no notifications inbox
-(explicitly stubbed as unavailable in the shared `Navbar` component) and does
-not use the SDK's `searchVisitor` endpoint despite offering a search box —
-its history search is entirely client-side filtering. See
+for the full permission boundary. It also has no notifications inbox — it can
+receive and display a raw OS-level push (FCM), but there's no in-app screen
+to review notification history, and no bell icon anywhere in this app's UI —
+and it does not use the SDK's `searchVisitor` endpoint despite offering a
+search box — its history search is entirely client-side filtering. See
 `../FEATURE-MATRIX.md`.

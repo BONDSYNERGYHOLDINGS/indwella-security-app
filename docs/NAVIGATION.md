@@ -2,8 +2,7 @@
 
 ```text
 AppStack (public — unauthenticated)
-├── onboarding         OnboardingScreen — role picker (same file as resident app; only 'security_auth' is registered here)
-├── introslider          IntroSliderScreen
+├── introslider          IntroSliderScreen — first screen shown, no role picker
 └── security_auth         Login.tsx — device-code entry
 
 Drawer("SecurityApp") (authenticated — drawerContent NOT customized, uses React Navigation's default drawer, not SecurityDrawer.tsx)
@@ -13,7 +12,11 @@ Drawer("SecurityApp") (authenticated — drawerContent NOT customized, uses Reac
 ```
 
 That's the entire app: three real screens (`security_auth`, `security_home`,
-`visit_details`) plus two shared onboarding screens.
+`visit_details`) plus the intro slider. The former `onboarding` role-picker
+screen (a verbatim copy of the resident app's, offering "Resident"/"Facility
+Manager" choices that dead-ended for both) has been deleted outright —
+`AppStack` now opens directly on `introslider`, matching the resident app's
+equivalent fix.
 
 ## Navigation param types (`src/navigation/types.ts`)
 
@@ -31,11 +34,13 @@ type SecurityStackParamList = {
 };
 ```
 
-Same as the resident app, `RootStackParamList` in this file also declares
-`ResidentStackParamList` and `AdminStackParamList` entries plus `resident_auth`
-and `admin_auth` routes that are **not registered** in this app's `AppStack`
-— leftover from the pre-split shared codebase, and the direct cause of the
-onboarding role-picker dead end documented in `../ENGINEERING-HANDOFF.md`.
+`RootStackParamList` is now clean — just `introslider`, `security_auth`, and
+`SecurityApp`. It used to also declare vestigial `ResidentStackParamList`/
+`AdminStackParamList` entries and unregistered `resident_auth`/`admin_auth`
+routes, leftover from the pre-split shared codebase and the direct cause of
+the onboarding role-picker dead end; both the dead types and the onboarding
+screen itself have since been removed together. See `../ENGINEERING-HANDOFF.md`
+for the platform-wide history of that split.
 
 ## How a visit is reached
 
